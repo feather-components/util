@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>util test</title>
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css" />
+    <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/ui.css" />
+    <script src="./util.js"></script>
+    <script>
+    window.onload = function(){
+        QUnit.test("qs", function(assert) {
+            if(!location.search){
+                location.search = '?x=1&name1=123&name2&name2=234&name4';
+            }
+
+            assert.equal(window.util.qs.get('name1'), '123');
+            assert.equal(window.util.qs.get('name2'), '234');
+            assert.equal(window.util.qs.get('name3'), null);
+            assert.equal(window.util.qs.get('name4', 'name4'), 'name4');
+            assert.equal(window.util.qs.make({name1: '[123]', name2: 2, name3: null}), 'name1=%5B123%5D&name2=2');
+        });
+    };
+    </script>
+</head>
+
+<body>
+<div id="qunit"></div>
+</body>
+</html>
