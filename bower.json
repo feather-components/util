@@ -1,8 +1,6 @@
 {
     "name": "util",
     "desc": "工具集合",
-    "version": "1.0.0",
-    "devDependencies": {
-        "qunit": "~2.0.1"
-    }
+    "main": "./util.js",
+    "version": "1.0.0"
 }
