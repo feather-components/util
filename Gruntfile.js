@@ -35,16 +35,16 @@ if(typeof define == 'function' && define.amd){\n\
         uglify: {
             options: {
                 sourceMap: true,
-                sourceMapName: 'dist/<%=pkg.name%>-min.js.map'
+                sourceMapName: '<%=pkg.name%>-min.js.map'
             },
             build: {
-                src: 'dist/<%=pkg.name%>.js',
-                dest: 'dist/<%=pkg.name%>-min.js'
+                src: '<%=pkg.name%>.js',
+                dest: '<%=pkg.name%>-min.js'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat'/*, 'uglify'*/]);
+    grunt.registerTask('default', ['concat', 'uglify']);
 };
