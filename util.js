@@ -142,6 +142,14 @@ return {
         offset = (timea - timeb) / MS_PER_DAY;
 
         return Math.floor(offset);
+    },
+
+    getMaxDateInMonth: function(year, month){
+        return (new Date(year, month, 0)).getDate();
+    },
+
+    getFirstWeekInMonth: function(year, month){
+        return (new Date(year, month, 1)).getDay();
     }
 };
 });
